@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap");
+
+:root {
+  --purple: #7159c1;
+  --grey: #777;
+  --darkgrey: #232325;
+  --yellow: #f7df1e;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  background: var(--purple);
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background: #fff;
+  width: 100%;
+  padding: 32px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.links {
+  font-size: 22px;
+}
+
+.links a + a {
+  margin-left: 32px;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--grey);
+  position: relative;
+}
+
+.links a.active {
+  font-weight: 500;
+  color: var(--purple);
+}
+
+.links a:hover {
+  color: var(--purple);
+}
+
+.links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--purple);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+.links a:hover::after {
+  width: 100%;
+  transition: 500ms width ease-in-out;
+}
+
+/*===CARD===*/
+
+.card {
+  background: #fff;
+  width: 600px;
+  height: 500px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 10px;
+  box-shadow: 0px 5px 8px -2px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  animation-name: up;
+  animation-duration: 700ms;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes up {
+  from {
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.avatar {
+  width: 300px;
+  height: 500px;
+  background: url("https://source.unsplash.com/collection/9374406/600x600")
+    no-repeat center center / cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.details {
+  padding: 32px;
+}
+
+.details .item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+}
+
+.details .item:last-child {
+  border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--darkgrey);
+  letter-spacing: 0.7px;
+}
+
+.details .item div:nth-child(2) {
+  color: var(--grey);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.details h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--purple);
+}
+
+.details .item div:nth-child(2) span {
+  padding: 8px 16px;
+  background: var(--yellow);
+  border-radius: 16px;
+  color: var(--grey);
+  margin: 8px 4px 0 0px;
+  display: inline-block;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/*=== FORM ===*/
+
+input {
+  width: 100%;
+  outline: none;
+  border: 0;
+  color: var(--darkgrey);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+input[type="radio"] {
+  width: initial;
+  margin-right: 4px;
+}
+
+button[type="submit"] {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--purple);
+  color: var(--yellow);
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  cursor: pointer;
+  margin: 40px 0;
+  right: 100px;
+  position: absolute;
+}
+
+input::placeholder {
+  font-size: 12px;
+  font-weight: normal;
+}
