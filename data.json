@@ -1,0 +1,13 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "name": "Amanda",
+      "birth": 830390400000,
+      "gender": "M",
+      "services": "natacao",
+      "avatar_url": "https://google.com/image/kanlnak",
+      "createdAt": 1596502041883
+    }
+  ]
+}
