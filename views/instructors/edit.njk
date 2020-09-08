@@ -1,14 +1,24 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-  <form class="card" method="POST" action="/instructors">
+
+  <div class="card">
+
     <section class="avatar"></section>
 
     <section class="details">
       <h3>Edit Instructor:</h3>
+      <form method="POST" action="/instructors?_method=PUT">
+        {% include 'instructors/shared/fields.njk' %}
+        <input type="hidden" name="id" value="{{instructor.id}}">
+      </form>
 
-      {% include 'instructors/shared/fields.njk' %}
-
+      <form class="form-delete" action="/instructors?_method=DELETE" method="post">
+        <input type="hidden" name="id" value="{{instructor.id}}">
+        <button type="submit">Remove</button>
+      </form>
     </section>
-  </form>
+
+  </div>
+
 {% endblock content %}

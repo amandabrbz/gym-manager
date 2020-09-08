@@ -1,8 +1,8 @@
 {
   "instructors": [
     {
-      "id": 4,
-      "name": "Guilherme",
+      "id": "4",
+      "name": "Guilherme t",
       "birth": 970272000000,
       "gender": "M",
       "services": "crossfit, malhação",

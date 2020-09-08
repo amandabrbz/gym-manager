@@ -68,8 +68,8 @@ header {
 
 .card {
   background: #fff;
-  width: 600px;
-  height: 500px;
+  width: 700px;
+  height: 560px;
   margin: 40px auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -168,7 +168,7 @@ a.btn {
   font-weight: 700;
   letter-spacing: 0.9px;
   cursor: pointer;
-  margin: 40px 0;
+  margin: 40px 0 20px;
   width: 100%;
 }
 
@@ -182,6 +182,13 @@ a.btn {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.form-delete button[type="submit"] {
+  margin-top: 10px;
+  text-transform: uppercase;
+  background: var(--yellow);
+  color: var(--purple);
 }
 
 input::placeholder {
