@@ -6,8 +6,4 @@
   <p align="center">
     CRUD using JavaScript
   </p>
-
-  <p align="center">
-    [![Netlify Status](https://api.netlify.com/api/v1/badges/0b9a24cf-7a19-4d22-ba6f-b486d3d23564/deploy-status)](https://app.netlify.com/sites/gym-manager/deploys)
-  </p>
 </p>
