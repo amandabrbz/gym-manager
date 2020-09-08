@@ -1,58 +1,33 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-  <div class="card">
-    <section class="avatar"></section>
-
-    <section class="details">
-      <h3>Detalhes:</h3>
-
-      <div class="item">
-        <div>
-          Instrutor:
-        </div>
-        <div>
-          Guilherme Sakai
-        </div>
-      </div>
-
-      <div class="item">
-        <div>
-          Idade:
-        </div>
-        <div>
-          30 anos
-        </div>
-      </div>
-
-      <div class="item">
-        <div>
-          Sexo:
-        </div>
-        <div>
-          Masculino
-        </div>
-      </div>
-
-      <div class="item">
-        <div>
-          Acompanhamento:
-        </div>
-        <div>
-          <span>Musculação</span>
-          <span>CrossFit</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div>
-          Desde:
-        </div>
-        <div>
-          01/01/2019
-        </div>
-      </div>
-
-    </section>
+  <div class="card table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Instructor</th>
+          <th>Specialty</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for instructor in instructors %}
+          <tr>
+            <td>
+              <span style="background-image: url({{ instructor.avatar_url }})"></span>
+              <p>{{ instructor.name }}</p>
+            </td>
+            <td>
+              <p>
+                {{ instructor.services }}
+              </p>
+            </td>
+            <td>
+              <a href="/instructors/{{ instructor.id }}">VIEW</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 {% endblock content %}

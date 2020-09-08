@@ -2,8 +2,18 @@ const fs = require("fs");
 const data = require("./data.json");
 const { age, date } = require("./utils");
 
+//view index
+exports.index = (req, res) => {
+  return res.render("instructors/index", { instructors: data.instructors });
+};
+
+//view create
+exports.create = (req, res) => {
+  return res.render("instructors/create");
+};
+
 //create
-exports.post = function (req, res) {
+exports.post = (req, res) => {
   /** VALIDACAO **/
   const keys = Object.keys(req.body); //cria as chaves sem os valores do forms
 
@@ -42,7 +52,7 @@ exports.post = function (req, res) {
 };
 
 //read
-exports.show = function (req, res) {
+exports.show = (req, res) => {
   //req.params.id
   const { id } = req.params;
 
@@ -67,7 +77,7 @@ exports.show = function (req, res) {
 };
 
 //edit
-exports.edit = function (req, res) {
+exports.edit = (req, res) => {
   //req.params.id
   const { id } = req.params;
 
@@ -88,7 +98,7 @@ exports.edit = function (req, res) {
 };
 
 //update
-exports.put = function (req, res) {
+exports.put = (req, res) => {
   const { id } = req.body;
   let index = 0;
 
@@ -107,6 +117,7 @@ exports.put = function (req, res) {
     ...foundInstructor,
     ...req.body,
     birth: Date.parse(req.body.birth),
+    id: Number(req.body.id),
   };
 
   data.instructors[index] = instructor;
