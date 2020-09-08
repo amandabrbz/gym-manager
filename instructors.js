@@ -1,5 +1,6 @@
 const fs = require("fs");
 const data = require("./data.json");
+const { age } = require("./utils");
 
 //create
 exports.post = function (req, res) {
@@ -40,4 +41,28 @@ exports.post = function (req, res) {
   });
 };
 
-//delete
+//show
+exports.show = function (req, res) {
+  //req.params.id
+
+  const { id } = req.params;
+
+  const foundInstructor = data.instructors.find(function (instructor) {
+    return instructor.id == id;
+  });
+
+  if (!foundInstructor) {
+    return res.render("404/index");
+  }
+
+  const instructor = {
+    ...foundInstructor,
+    age: age(foundInstructor.birth),
+    services: foundInstructor.services.split(","),
+    createdAt: new Intl.DateTimeFormat("pt-BR", { timeZone: "UTC" }).format(
+      foundInstructor.createdAt
+    ),
+  };
+
+  return res.render("instructors/show", { instructor });
+};

@@ -5,59 +5,9 @@
     <section class="avatar"></section>
 
     <section class="details">
-      <h3>Cadastro:</h3>
+      <h3>New Instructor:</h3>
 
-      <div class="item">
-        <div>
-          Avatar URL:
-        </div>
-        <div>
-          <input type="url" name="avatar_url" placeholder="https://www.imagem.com.br/imagem">
-        </div>
-      </div>
-
-      <div class="item">
-        <div>
-          Instrutor:
-        </div>
-        <div>
-          <input type="text" name="name" placeholder="Nome e Sobrenome">
-        </div>
-      </div>
-
-      <div class="item">
-        <div>
-          Idade:
-        </div>
-        <div>
-          <input type="date" name="birth">
-        </div>
-      </div>
-
-      <div class="item">
-        <div>
-          Sexo:
-        </div>
-        <div>
-          <span>
-            <input type="radio" name="gender" value="M">Masculino
-          </span>
-          <span>
-            <input type="radio" name="gender" value="M">Feminino
-          </span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div>
-          Área de atuação:
-        </div>
-        <div>
-          <input type="text" name="services" placeholder="Separe os serviços por vírgula">
-        </div>
-      </div>
-
-      <button type="submit">SALVAR</button>
+      {% include 'instructors/shared/fields.njk' %}
 
     </section>
   </form>
